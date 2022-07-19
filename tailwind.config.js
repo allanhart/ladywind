@@ -13,7 +13,7 @@ module.exports = {
       // zinc: colors.zinc,
       // neutral: colors.neutral,
       primary: '#ffffff',
-      secondary: '#ffbcbc',
+      secondary: 'rgb(255, 188, 188)',
     }),
     container: {
       center: true,
