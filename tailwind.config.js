@@ -28,7 +28,12 @@ module.exports = {
       'lg': '900px',
       // => @media (min-width: 1024px) { ... }
     },
-    extend: {},
+    extend: {
+      scale: {
+        '150': '1.50',
+        '200': '2.00',
+      },
+    },
   },
   plugins: [],
 }
