@@ -1,16 +1,55 @@
+
 $(function () {
+  const tlDefaults = { duration: 1.25 };
 
-  const tl = window.gsap.timeline({ delay: 0 });
+  // ---------------------------------------------------------------------------
+  function animateL() {
+    const L = document.getElementById('big-L');
 
-  tl.from('#big-L', { x: 25, duration: 1.25 }, 0);
-  tl.to('#big-L', { opacity: 1, duration: 1.25 }, 0);
+    const tl = window.gsap.timeline({ defaults: tlDefaults });
+    tl.from(L, { x: 25 }, 0);
+    tl.to(L, { opacity: 1 }, 0);
 
-  tl.from('#big-W', { x: -25, duration: 1.25 }, 0);
-  tl.to('#big-W', { opacity: 1, duration: 1.25 }, 0);
+    return tl;
+  }
 
-  tl.from('#lady-wind-fashion', { y: 10, duration: 1.25 }, 0.5);
-  tl.to('#lady-wind-fashion', { opacity: 1, duration: 1.25 }, 0.5);
+  // ---------------------------------------------------------------------------
+  function animateW() {
+    const W = document.getElementById('big-W');
 
-  tl.to('#dot-left', { opacity: 1, duration: 5 }, 0);
-  tl.to('#dot-right', { opacity: 1, duration: 5 }, 0);
+    const tl = window.gsap.timeline({ defaults: tlDefaults });
+    tl.from(W, { x: -25 }, 0);
+    tl.to(W, { opacity: 1 }, 0);
+
+    return tl;
+  }
+
+  // ---------------------------------------------------------------------------
+  function animateTitle() {
+    const title = document.getElementById('lady-wind-fashion');
+
+    const tl = window.gsap.timeline({ defaults: tlDefaults });
+    tl.from(title, { y: 10 }, 0);
+    tl.to(title, { opacity: 1 }, 0);
+
+    return tl;
+  }
+
+  // ---------------------------------------------------------------------------
+  function animateDots() {
+    const dotLeft = document.getElementById('dot-left');
+    const dotRight = document.getElementById('dot-right');
+
+    const tl = window.gsap.timeline({ defaults: tlDefaults });
+    tl.to(dotLeft, { opacity: 1, duration: 2 }, 0);
+    tl.to(dotRight, { opacity: 1, duration: 2 }, 0);
+
+    return tl;
+  }
+
+  const master = window.gsap.timeline();
+  master.add(animateDots(), 0);
+  master.add(animateL(), 0);
+  master.add(animateW(), 0);
+  master.add(animateTitle(), 0.75);
 });
