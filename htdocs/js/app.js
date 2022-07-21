@@ -1,36 +1,42 @@
-
 $(function () {
   const tlDefaults = { duration: 1.25 };
 
   // ---------------------------------------------------------------------------
   function animateL() {
-    const L = document.getElementById('big-L');
+    const el = document.getElementById('big-L');
 
     const tl = window.gsap.timeline({ defaults: tlDefaults });
-    tl.from(L, { x: 25 }, 0);
-    tl.to(L, { opacity: 1 }, 0);
+    tl.from(el, { x: 20 }, 0);
+    tl.to(el, { opacity: 1 }, 0);
 
     return tl;
   }
 
   // ---------------------------------------------------------------------------
   function animateW() {
-    const W = document.getElementById('big-W');
+    const el = document.getElementById('big-W');
 
     const tl = window.gsap.timeline({ defaults: tlDefaults });
-    tl.from(W, { x: -25 }, 0);
-    tl.to(W, { opacity: 1 }, 0);
+    tl.from(el, { x: -20 }, 0);
+    tl.to(el, { opacity: 1 }, 0);
 
     return tl;
   }
 
   // ---------------------------------------------------------------------------
   function animateTitle() {
-    const title = document.getElementById('lady-wind-fashion');
+    const el = document.getElementById('lady-wind-fashion');
 
     const tl = window.gsap.timeline({ defaults: tlDefaults });
-    tl.from(title, { y: 10 }, 0);
-    tl.to(title, { opacity: 1 }, 0);
+    el.style.opacity = 1;
+    tl.from(el, { y: 5 }, 0);
+
+    const letters = Array.from(el.children);
+    tl.to(letters, {
+      ease: 'power3',
+      opacity: 1,
+      stagger: { amount: 0.6, from: 'start' },
+    }, 0);
 
     return tl;
   }

@@ -11,7 +11,11 @@
     transform: translateX(-12px);
   }
 
-  #lady-wind-logo g {
+  #lady-wind-logo > g {
+    opacity: 0;
+  }
+
+  #lady-wind-fashion > path {
     opacity: 0;
   }
 }
