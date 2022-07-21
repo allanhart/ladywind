@@ -7,10 +7,6 @@
     @apply transform-gpu md:scale-150 lg:scale-200;
   }
 
-  #lady-wind-logo {
-    transform: translateX(-12px);
-  }
-
   #lady-wind-logo > g {
     opacity: 0;
   }
