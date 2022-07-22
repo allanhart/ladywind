@@ -26,10 +26,13 @@ $(function () {
   // ---------------------------------------------------------------------------
   function animateTitle() {
     const el = document.getElementById('lady-wind-fashion');
+    el.style.opacity = 1;
 
     const tl = window.gsap.timeline({ defaults: tlDefaults });
-    el.style.opacity = 1;
-    tl.from(el, { y: 5 }, 0);
+    tl.from(el, {
+      y: 5,
+      transform: 'rotate3d(1, 0, 0, 90deg)',
+    }, 0);
 
     const letters = Array.from(el.children);
     tl.to(letters, {
