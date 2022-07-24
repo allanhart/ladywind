@@ -38,7 +38,7 @@ $(function () {
     tl.to(letters, {
       ease: 'power3',
       opacity: 1,
-      stagger: { amount: 0.6, from: 'start' },
+      stagger: { amount: 0.8, from: 'start' },
     }, 0);
 
     return tl;
